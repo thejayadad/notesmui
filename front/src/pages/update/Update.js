@@ -1,9 +1,6 @@
 import React from 'react'
-import { styled, Box, TextareaAutosize, Button, InputBase, FormControl  } from '@mui/material';
+import { Box, styled, TextareaAutosize, Button, FormControl, InputBase } from '@mui/material';
 import { AddCircle as Add } from '@mui/icons-material';
-import bg from "../../images/bg.png"
-
-
 
 const Container = styled(Box)(({ theme }) => ({
     margin: '50px 100px',
@@ -11,7 +8,6 @@ const Container = styled(Box)(({ theme }) => ({
         margin: 0
     }
 }));
-
 const Image = styled('img')({
     width: '100%',
     height: '50vh',
@@ -30,7 +26,7 @@ const InputTextField = styled(InputBase)`
     font-size: 25px;
 `;
 
-const Textarea = styled(TextareaAutosize)`
+const StyledTextArea = styled(TextareaAutosize)`
     width: 100%;
     border: none;
     margin-top: 50px;
@@ -44,18 +40,19 @@ const initialPost = {
     title: '',
     description: '',
     picture: '',
-    username: '',
-    categories: '',
+    username: 'codeforinterview',
+    categories: 'Tech',
     createdDate: new Date()
 }
 
+const Update = () => {
+    const url = 'https://images.pexels.com/photos/7964653/pexels-photo-7964653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 
-
-const Create = () => {
   return (
     <Container>
-        <Image src={bg} alt="post"/>
-        <StyledFormControl>
+            <Image src={ url} alt="post" />
+
+            <StyledFormControl>
                 <label htmlFor="fileInput">
                     <Add fontSize="large" color="action" />
                 </label>
@@ -64,20 +61,22 @@ const Create = () => {
                     id="fileInput"
                     style={{ display: "none" }}
                 />
-                <InputTextField name='title' placeholder="Title" />
-                <Button  sx={{
+                <InputTextField  name='title' placeholder="Title" />
+                <Button sx={{
                     background: " #4f240f",
                     color: " #fafafa"
-                }}>Publish</Button>
+                }}
+
+                >Update</Button>
             </StyledFormControl>
 
-            <Textarea
+            <StyledTextArea
                 rowsMin={5}
                 placeholder="Tell your story..."
                 name='description'
             />
-    </Container>
+        </Container>
   )
 }
 
-export default Create
+export default Update

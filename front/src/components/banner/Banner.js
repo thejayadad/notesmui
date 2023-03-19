@@ -5,11 +5,13 @@ import { styled, Box, Typography } from '@mui/material';
 
 const Image = styled(Box)`
     width: 100%;
-    background: url(https://images.pexels.com/photos/2882507/pexels-photo-2882507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/55% repeat-x #000;
+    background: url(https://images.pexels.com/photos/2882507/pexels-photo-2882507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/100%;
     height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: auto;
     justify-content: center;
 `;
 
@@ -27,8 +29,6 @@ const SubHeading = styled(Typography)`
 const Banner = () => {
   return (
     <Image>
-    <Heading>BLOG</Heading>
-    <SubHeading>Code for Interview</SubHeading>
 </Image>
   )
 }

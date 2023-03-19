@@ -8,4 +8,5 @@ body{
   font-family: monospace;
   background: #fafafa;
   color: #4f240f;
+  overflow-x: hidden;
 }
